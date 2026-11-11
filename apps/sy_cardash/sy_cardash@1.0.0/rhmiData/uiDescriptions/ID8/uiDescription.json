@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.3.0",
+  "containers": {
+    "1000": {
+      "type": "logical",
+      "name": "logicalContainer",
+      "components": {
+        "1110": {
+          "type": "bookmark",
+          "name": "bookmark"
+        }
+      }
+    },
+    "3000": {
+      "type": "state",
+      "name": "engine",
+      "components": {
+        "3220": {
+          "type": "title",
+          "name": "engineTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_0",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "4000": {
+      "type": "state",
+      "name": "fuel",
+      "components": {
+        "4220": {
+          "type": "title",
+          "name": "fuelTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_1",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "5000": {
+      "type": "state",
+      "name": "trips",
+      "components": {
+        "5220": {
+          "type": "title",
+          "name": "tripsTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_2",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "6000": {
+      "type": "state",
+      "name": "transmission",
+      "components": {
+        "6220": {
+          "type": "title",
+          "name": "transmissionTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_3",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "7000": {
+      "type": "state",
+      "name": "dpf",
+      "components": {
+        "7220": {
+          "type": "title",
+          "name": "dpfTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_4",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "8000": {
+      "type": "state",
+      "name": "details",
+      "components": {
+        "8220": {
+          "type": "title",
+          "name": "detailsTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_5",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "9000": {
+      "type": "state",
+      "name": "settings",
+      "components": {
+        "9220": {
+          "type": "title",
+          "name": "settingsTitle",
+          "rows": [
+            {
+              "Text": {
+                "value": "SID_6",
+                "type": "StringId"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

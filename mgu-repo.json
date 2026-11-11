@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "components": [
+    {
+      "id": "sy_cardash",
+      "kind": "app",
+      "title": "SY Car Data",
+      "description": "M Track arayuzlu motor verisi: devir, turbo, guc, tork, sicakliklar, yolculuklar, sanziman, DPF.",
+      "path": "apps/sy_cardash",
+      "build": "unit",
+      "mguHmi": [
+        "ID8"
+      ]
+    }
+  ]
+}

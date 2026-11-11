@@ -1,0 +1,2700 @@
+{
+  "design": {
+    "w": 2880,
+    "h": 960
+  },
+  "screens": [
+    {
+      "name": "engine",
+      "kind": "gpu",
+      "title": "Car Data",
+      "entry": true,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "engineMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {
+            "app": "SY Car Data",
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 0,
+            "chips": "",
+            "title": "Motor",
+            "sub": "",
+            "back": false,
+            "credit": "",
+            "hu": "id8"
+          }
+        },
+        {
+          "name": "rpmBar",
+          "rtype": "gpu",
+          "gpu": "mtrackRev",
+          "x": 0,
+          "y": 196,
+          "w": 2880,
+          "h": 164,
+          "opts": {
+            "dec": 0,
+            "min": 0,
+            "peak": 5600,
+            "tickDiv": 1000,
+            "tickDec": -1,
+            "label": "Motor devri",
+            "value": 5200,
+            "unit": "rpm",
+            "max": 8000,
+            "limit": 7200,
+            "ticks": 8
+          }
+        },
+        {
+          "name": "ruleA",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 48,
+          "y": 372,
+          "w": 2784,
+          "h": 1,
+          "opts": {
+            "line": 1,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "speed",
+          "rtype": "gpu",
+          "gpu": "mtrackHero",
+          "x": 48,
+          "y": 392,
+          "w": 470,
+          "h": 154,
+          "opts": {
+            "label": "Hiz",
+            "value": "87",
+            "unit": "km/h",
+            "size": 120,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "gear",
+          "rtype": "gpu",
+          "gpu": "mtrackGear",
+          "x": 620,
+          "y": 392,
+          "w": 260,
+          "h": 154,
+          "opts": {
+            "text": "D3",
+            "color": "",
+            "size": 120
+          }
+        },
+        {
+          "name": "powerBar",
+          "rtype": "gpu",
+          "gpu": "mtrackMeter",
+          "x": 900,
+          "y": 392,
+          "w": 940,
+          "h": 108,
+          "opts": {
+            "dec": 0,
+            "min": 0,
+            "peak": null,
+            "label": "Guc",
+            "value": 312,
+            "unit": "hp",
+            "max": 500,
+            "limit": 450,
+            "size": 62
+          }
+        },
+        {
+          "name": "torqueBar",
+          "rtype": "gpu",
+          "gpu": "mtrackMeter",
+          "x": 900,
+          "y": 512,
+          "w": 940,
+          "h": 108,
+          "opts": {
+            "dec": 0,
+            "min": 0,
+            "peak": null,
+            "label": "Tork",
+            "value": 455,
+            "unit": "Nm",
+            "max": 700,
+            "limit": 630,
+            "size": 62
+          }
+        },
+        {
+          "name": "boostBar",
+          "rtype": "gpu",
+          "gpu": "mtrackMeter",
+          "x": 1900,
+          "y": 392,
+          "w": 884,
+          "h": 228,
+          "opts": {
+            "dec": 2,
+            "min": 0,
+            "peak": 1.31,
+            "label": "Turbo basinci",
+            "value": 1.12,
+            "unit": "bar",
+            "max": 2.5,
+            "limit": 2.25,
+            "size": 96
+          }
+        },
+        {
+          "name": "ruleB",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 48,
+          "y": 636,
+          "w": 2784,
+          "h": 1,
+          "opts": {
+            "line": 1,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "oilBar",
+          "rtype": "gpu",
+          "gpu": "mtrackStat",
+          "x": 48,
+          "y": 648,
+          "w": 678,
+          "h": 100,
+          "opts": {
+            "label": "Yag",
+            "value": 104,
+            "unit": "°C",
+            "dec": 0,
+            "min": 40,
+            "max": 150,
+            "color": "crit",
+            "size": 52
+          }
+        },
+        {
+          "name": "coolantBar",
+          "rtype": "gpu",
+          "gpu": "mtrackStat",
+          "x": 750,
+          "y": 648,
+          "w": 678,
+          "h": 100,
+          "opts": {
+            "label": "Sogutma suyu",
+            "value": 92,
+            "unit": "°C",
+            "dec": 0,
+            "min": 40,
+            "max": 130,
+            "color": "info",
+            "size": 52
+          }
+        },
+        {
+          "name": "intakeBar",
+          "rtype": "gpu",
+          "gpu": "mtrackStat",
+          "x": 1452,
+          "y": 648,
+          "w": 678,
+          "h": 100,
+          "opts": {
+            "label": "Emme havasi",
+            "value": 34,
+            "unit": "°C",
+            "dec": 0,
+            "min": -20,
+            "max": 80,
+            "color": "",
+            "size": 52
+          }
+        },
+        {
+          "name": "batteryBar",
+          "rtype": "gpu",
+          "gpu": "mtrackStat",
+          "x": 2154,
+          "y": 648,
+          "w": 678,
+          "h": 100,
+          "opts": {
+            "label": "Aku",
+            "value": 12.6,
+            "unit": "V",
+            "dec": 1,
+            "min": 10,
+            "max": 16,
+            "color": "",
+            "size": 52
+          }
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 738,
+          "y": 648,
+          "w": 1,
+          "h": 100,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1440,
+          "y": 648,
+          "w": 1,
+          "h": 100,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep3",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 2142,
+          "y": 648,
+          "w": 1,
+          "h": 100,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep4",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 890,
+          "y": 392,
+          "w": 1,
+          "h": 228,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep5",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1870,
+          "y": 392,
+          "w": 1,
+          "h": 228,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {
+            "where": "tl"
+          }
+        }
+      ]
+    },
+    {
+      "name": "fuel",
+      "kind": "gpu",
+      "title": "Yakit ve hava",
+      "entry": false,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "fuelMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 92,
+          "opts": {
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 1,
+            "chips": "",
+            "sub": "DME'den · her biri son 5 dakikasiyla",
+            "title": "Yakit ve hava"
+          }
+        },
+        {
+          "name": "fuel0",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 40,
+          "y": 196,
+          "w": 891,
+          "h": 268,
+          "opts": {
+            "label": "Emme havasi",
+            "value": "37",
+            "unit": "°C",
+            "points": "25,26,25,27,28,27,29,30,31,30,32,33,35,36,37",
+            "points2": "",
+            "lo": 20,
+            "hi": 45,
+            "foot": "son 5 dk · en dusuk 25 · en yuksek 37",
+            "legend": ""
+          }
+        },
+        {
+          "name": "fuel1",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 995,
+          "y": 196,
+          "w": 891,
+          "h": 268,
+          "opts": {
+            "label": "Yuksek basinc yakit",
+            "value": "320",
+            "unit": "bar",
+            "points": "40,120,260,300,330,338,320,310,300,315,320",
+            "points2": "",
+            "lo": 0,
+            "hi": 360,
+            "foot": "son 5 dk · en dusuk 37 · en yuksek 338",
+            "legend": ""
+          }
+        },
+        {
+          "name": "fuel2",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 1949,
+          "y": 196,
+          "w": 891,
+          "h": 268,
+          "opts": {
+            "label": "Alcak basinc yakit",
+            "value": "4.6",
+            "unit": "bar",
+            "points": "5.4,5.2,5.0,4.9,4.8,4.7,4.6,4.5,4.6",
+            "points2": "",
+            "lo": 4,
+            "hi": 6,
+            "foot": "son 5 dk · en dusuk 4.5 · en yuksek 5.4",
+            "legend": ""
+          }
+        },
+        {
+          "name": "fuel3",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 40,
+          "y": 500,
+          "w": 891,
+          "h": 268,
+          "opts": {
+            "label": "Emme havasi dis havanin ustunde",
+            "value": "19",
+            "unit": "°C",
+            "points": "8,9,10,12,13,15,16,17,18,19",
+            "points2": "",
+            "lo": 0,
+            "hi": 25,
+            "foot": "isi emilimi · en dusuk 8 · en yuksek 19",
+            "legend": ""
+          }
+        },
+        {
+          "name": "fuel4",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 995,
+          "y": 500,
+          "w": 891,
+          "h": 268,
+          "opts": {
+            "label": "Atesleme avansi",
+            "value": "10.8",
+            "unit": "°",
+            "points": "31,25,18,12,9,7.3,8,10,10.8",
+            "points2": "",
+            "lo": 0,
+            "hi": 35,
+            "foot": "UON oncesi · en dusuk 7.3 · en yuksek 31.1",
+            "legend": ""
+          }
+        },
+        {
+          "name": "fuel5",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 1949,
+          "y": 500,
+          "w": 891,
+          "h": 268,
+          "opts": {
+            "label": "Turbo basinci",
+            "value": "1.12",
+            "unit": "bar",
+            "points": "0.2,0.5,0.9,1.1,1.3,1.2,1.12",
+            "points2": "0.3,0.6,1.0,1.2,1.35,1.25,1.18",
+            "lo": 0,
+            "hi": 1.6,
+            "foot": "gercek 1.12 · hedef 1.18 · son 5 dk",
+            "legend": "Gercek, Hedef"
+          }
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 964,
+          "y": 196,
+          "w": 1,
+          "h": 572,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1918,
+          "y": 196,
+          "w": 1,
+          "h": 572,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {}
+        }
+      ]
+    },
+    {
+      "name": "trips",
+      "kind": "gpu",
+      "title": "Yolculuklar",
+      "entry": false,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "tripsMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 92,
+          "opts": {
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 2,
+            "chips": "Su an 8.4 l/sa · 9.1 l/100 km|accent",
+            "sub": "Car Data calisirken sayilir, ekrani kapaliyken de",
+            "title": "Yolculuklar"
+          }
+        },
+        {
+          "name": "lastTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 205,
+          "w": 1800,
+          "h": 31,
+          "opts": {
+            "text": "SON YOLCULUK · 30 EKI, 10:31 - 10:48",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tl0",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 249,
+          "w": 427,
+          "h": 31,
+          "opts": {
+            "text": "MESAFE",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tv0",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 40,
+          "y": 287,
+          "w": 427,
+          "h": 96,
+          "opts": {
+            "value": "9.8",
+            "unit": "km",
+            "size": 84,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "tl1",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 515,
+          "y": 249,
+          "w": 427,
+          "h": 31,
+          "opts": {
+            "text": "TUKETILEN YAKIT",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tv1",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 515,
+          "y": 287,
+          "w": 427,
+          "h": 96,
+          "opts": {
+            "value": "1.21",
+            "unit": "l",
+            "size": 84,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "tl2",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 989,
+          "y": 249,
+          "w": 427,
+          "h": 31,
+          "opts": {
+            "text": "TUKETIM",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tv2",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 989,
+          "y": 287,
+          "w": 427,
+          "h": 96,
+          "opts": {
+            "value": "12.3",
+            "unit": "l/100 km",
+            "size": 84,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "tl3",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1464,
+          "y": 249,
+          "w": 427,
+          "h": 31,
+          "opts": {
+            "text": "MALIYET",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tv3",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 1464,
+          "y": 287,
+          "w": 427,
+          "h": 96,
+          "opts": {
+            "value": "2.18",
+            "unit": "EUR",
+            "size": 84,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "tl4",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1939,
+          "y": 249,
+          "w": 427,
+          "h": 31,
+          "opts": {
+            "text": "SURE",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tv4",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 1939,
+          "y": 287,
+          "w": 427,
+          "h": 96,
+          "opts": {
+            "value": "0:17",
+            "unit": "sa",
+            "size": 84,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "tl5",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2413,
+          "y": 249,
+          "w": 427,
+          "h": 31,
+          "opts": {
+            "text": "ORTALAMA",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tv5",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 2413,
+          "y": 287,
+          "w": 427,
+          "h": 96,
+          "opts": {
+            "value": "35",
+            "unit": "km/h",
+            "size": 84,
+            "color": "",
+            "align": "left"
+          }
+        },
+        {
+          "name": "tripLine",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 383,
+          "w": 2800,
+          "h": 31,
+          "opts": {
+            "text": "rolanti 0.08 l · azami hiz 74 km/h · sayac 12137 - 12147 km · depo 37 - 36 l",
+            "size": 24,
+            "font": "label",
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tripTable",
+          "rtype": "gpu",
+          "gpu": "teleTable",
+          "x": 40,
+          "y": 436,
+          "w": 1850,
+          "h": 328,
+          "opts": {
+            "columns": "Baslangic:1.4, Sure:0.8:right, Mesafe:1:right, Yakit:0.8:right, l/100 km:1:right, Maliyet:1:right, Azami hiz:1.1:right",
+            "rowH": 54,
+            "rows": "30 Eki, 10:31 | 0:17 sa | 9.8 km | 1.21 l | 12.3 | 2.18 EUR | 74 km/h\n28 Eki, 15:31 | 0:55 sa | 64.8 km | 5.41 l | 8.3 | 9.74 EUR | 171 km/h\n27 Eki, 15:31 | 0:12 sa | 6.4 km | 0.98 l | 15.3 | 1.76 EUR | 62 km/h"
+          }
+        },
+        {
+          "name": "tripPeriod",
+          "rtype": "gpu",
+          "gpu": "teleSeg",
+          "x": 1970,
+          "y": 436,
+          "w": 870,
+          "h": 72,
+          "opts": {
+            "items": "Bugun, 7 gun, 30 gun",
+            "sel": 1,
+            "disabled": false
+          }
+        },
+        {
+          "name": "tripTotals",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 1970,
+          "y": 526,
+          "w": 870,
+          "h": 240,
+          "opts": {
+            "rowH": 48,
+            "rows": "Yolculuk | 6\nMesafe | 87.0 km\nYakit | 8.9 l\nOrtalama | 10.2 l/100 km\nYakit fiyati | 1.80 EUR/l | accent"
+          }
+        },
+        {
+          "name": "emptyTable",
+          "rtype": "gpu",
+          "gpu": "teleTable",
+          "x": 40,
+          "y": 196,
+          "w": 1850,
+          "h": 50,
+          "opts": {
+            "columns": "Baslangic:1.4, Sure:0.8:right, Mesafe:1:right, Yakit:0.8:right, l/100 km:1:right, Maliyet:1:right, Azami hiz:1.1:right",
+            "rows": "",
+            "rowH": 72,
+            "hidden": true
+          }
+        },
+        {
+          "name": "tripsEmpty",
+          "rtype": "gpu",
+          "gpu": "teleEmpty",
+          "x": 40,
+          "y": 246,
+          "w": 1850,
+          "h": 518,
+          "opts": {
+            "icon": "route",
+            "head": "Henuz yolculuk yok",
+            "line": "Yolculuk motor calisinca baslar; motor kapanip arac 10 dk durunca biter.",
+            "color": "",
+            "hidden": true
+          }
+        },
+        {
+          "name": "emptyPeriod",
+          "rtype": "gpu",
+          "gpu": "teleSeg",
+          "x": 1970,
+          "y": 196,
+          "w": 870,
+          "h": 72,
+          "opts": {
+            "items": "Bugun, 7 gun, 30 gun",
+            "sel": 1,
+            "disabled": true,
+            "hidden": true
+          }
+        },
+        {
+          "name": "emptyTotals",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 1970,
+          "y": 286,
+          "w": 870,
+          "h": 240,
+          "opts": {
+            "rowH": 48,
+            "hidden": true,
+            "rows": "Yolculuk | 0\nMesafe | --\nYakit | --\nOrtalama | --\nYakit fiyati | 1.80 EUR/l | accent"
+          }
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 491,
+          "y": 240,
+          "w": 1,
+          "h": 145,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 965,
+          "y": 240,
+          "w": 1,
+          "h": 145,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep3",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1440,
+          "y": 240,
+          "w": 1,
+          "h": 145,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep4",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1915,
+          "y": 240,
+          "w": 1,
+          "h": 145,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep5",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 2389,
+          "y": 240,
+          "w": 1,
+          "h": 145,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep6",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1930,
+          "y": 436,
+          "w": 1,
+          "h": 330,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {}
+        }
+      ]
+    },
+    {
+      "name": "transmission",
+      "kind": "gpu",
+      "title": "Sanziman",
+      "entry": false,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "transmissionMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 92,
+          "opts": {
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 3,
+            "chips": "Deneysel|warn; Salt okunur|dim",
+            "sub": "ZF 8HP · sanziman beyninden okunur, hicbir sey yazilmaz",
+            "title": "Sanziman"
+          }
+        },
+        {
+          "name": "liveTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 205,
+          "w": 797,
+          "h": 31,
+          "opts": {
+            "text": "CANLI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "transGear",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 262,
+          "w": 400,
+          "h": 150,
+          "opts": {
+            "text": "D3",
+            "size": 150,
+            "font": "bold",
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "oilTemp",
+          "rtype": "gpu",
+          "gpu": "teleValue",
+          "x": 537,
+          "y": 257,
+          "w": 300,
+          "h": 80,
+          "opts": {
+            "value": "78",
+            "unit": "°C",
+            "size": 72,
+            "color": "",
+            "align": "right"
+          }
+        },
+        {
+          "name": "oilCaption",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 537,
+          "y": 327,
+          "w": 300,
+          "h": 31,
+          "opts": {
+            "text": "SANZIMAN YAGI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "right",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "liveKv",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 40,
+          "y": 416,
+          "w": 797,
+          "h": 310,
+          "opts": {
+            "rowH": 62,
+            "rows": "Giris devri | 2410 rpm\nCikis devri | 1260 rpm\nKonvertor kaymasi | 12 rpm\nKilit kavramasi | Kilitli yuksek | ok\nSecici | D"
+          }
+        },
+        {
+          "name": "adaptTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 205,
+          "w": 1009,
+          "h": 31,
+          "opts": {
+            "text": "KAVRAMA UYARLAMALARI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "adaptLine",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 243,
+          "w": 1009,
+          "h": 31,
+          "opts": {
+            "text": "Fabrika degerine gore kavrama basina dolum basinci sapmasi",
+            "size": 24,
+            "font": "label",
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchPic",
+          "rtype": "gpu",
+          "gpu": "image",
+          "x": 1049,
+          "y": 296,
+          "w": 749,
+          "h": 370,
+          "opts": {
+            "src": "key:clutches",
+            "radius": 0
+          }
+        },
+        {
+          "name": "clutch0",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 317,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "KAVRAMA A",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchVal0",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1788,
+          "y": 317,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "+0.18 bar",
+            "size": 24,
+            "font": "num",
+            "align": "right",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchHair0",
+          "rtype": "gpu",
+          "gpu": "rect",
+          "x": 909,
+          "y": 362,
+          "w": 1009,
+          "h": 2,
+          "opts": {
+            "color": "#12283c",
+            "radius": 0
+          }
+        },
+        {
+          "name": "clutch1",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 391,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "KAVRAMA B",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchVal1",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1788,
+          "y": 391,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "-0.06 bar",
+            "size": 24,
+            "font": "num",
+            "align": "right",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchHair1",
+          "rtype": "gpu",
+          "gpu": "rect",
+          "x": 909,
+          "y": 436,
+          "w": 1009,
+          "h": 2,
+          "opts": {
+            "color": "#12283c",
+            "radius": 0
+          }
+        },
+        {
+          "name": "clutch2",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 465,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "KAVRAMA C",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchVal2",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1788,
+          "y": 465,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "+0.31 bar",
+            "size": 24,
+            "font": "num",
+            "align": "right",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchHair2",
+          "rtype": "gpu",
+          "gpu": "rect",
+          "x": 909,
+          "y": 510,
+          "w": 1009,
+          "h": 2,
+          "opts": {
+            "color": "#12283c",
+            "radius": 0
+          }
+        },
+        {
+          "name": "clutch3",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 539,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "KAVRAMA D",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchVal3",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1788,
+          "y": 539,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "+0.09 bar",
+            "size": 24,
+            "font": "num",
+            "align": "right",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchHair3",
+          "rtype": "gpu",
+          "gpu": "rect",
+          "x": 909,
+          "y": 584,
+          "w": 1009,
+          "h": 2,
+          "opts": {
+            "color": "#12283c",
+            "radius": 0
+          }
+        },
+        {
+          "name": "clutch4",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 909,
+          "y": 613,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "KAVRAMA E",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchVal4",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1788,
+          "y": 613,
+          "w": 130,
+          "h": 31,
+          "opts": {
+            "text": "-0.12 bar",
+            "size": 24,
+            "font": "num",
+            "align": "right",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "clutchHair4",
+          "rtype": "gpu",
+          "gpu": "rect",
+          "x": 909,
+          "y": 658,
+          "w": 1009,
+          "h": 2,
+          "opts": {
+            "color": "#12283c",
+            "radius": 0
+          }
+        },
+        {
+          "name": "histTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1990,
+          "y": 205,
+          "w": 850,
+          "h": 31,
+          "opts": {
+            "text": "YAG SICAKLIGI GECMISI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "histPic",
+          "rtype": "gpu",
+          "gpu": "image",
+          "x": 1990,
+          "y": 236,
+          "w": 850,
+          "h": 290,
+          "opts": {
+            "src": "key:oilBands",
+            "radius": 0
+          }
+        },
+        {
+          "name": "band0",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1990,
+          "y": 539,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "< 40",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "bandPct0",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1990,
+          "y": 571,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "6 %",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "band1",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2160,
+          "y": 539,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "40-70",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "bandPct1",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2160,
+          "y": 571,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "18 %",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "band2",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2330,
+          "y": 539,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "70-100",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "bandPct2",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2330,
+          "y": 571,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "61 %",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "band3",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2500,
+          "y": 539,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "100-120",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "bandPct3",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2500,
+          "y": 571,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "13 %",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "band4",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2670,
+          "y": 539,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "> 120",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "bandPct4",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2670,
+          "y": 571,
+          "w": 170,
+          "h": 31,
+          "opts": {
+            "text": "2 %",
+            "size": 24,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "histKv",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 1990,
+          "y": 636,
+          "w": 850,
+          "h": 128,
+          "opts": {
+            "rowH": 64,
+            "rows": "Calisma saati | 1 284 sa\nSanziman beyni | GSZFBCE · 0F25D0"
+          }
+        },
+        {
+          "name": "transEmpty",
+          "rtype": "gpu",
+          "gpu": "teleEmpty",
+          "x": 40,
+          "y": 250,
+          "w": 2800,
+          "h": 300,
+          "opts": {
+            "icon": "info",
+            "head": "Bu sanziman varyanti henuz desteklenmiyor",
+            "line": "",
+            "color": "",
+            "hidden": true
+          }
+        },
+        {
+          "name": "transCode",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 459,
+          "w": 2800,
+          "h": 70,
+          "opts": {
+            "text": "0F2D60",
+            "size": 64,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false,
+            "hidden": true
+          }
+        },
+        {
+          "name": "transCaption",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 537,
+          "w": 2800,
+          "h": 31,
+          "opts": {
+            "text": "SANZIMAN BEYNINDEN OKUNAN VARYANT",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false,
+            "hidden": true
+          }
+        },
+        {
+          "name": "transHint",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 598,
+          "w": 2800,
+          "h": 34,
+          "opts": {
+            "text": "Bu varyant eklendiginde degerleri burada gorunur.",
+            "size": 27,
+            "font": "label",
+            "align": "center",
+            "color": "#81c4ff",
+            "wrap": false,
+            "hidden": true
+          }
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 873,
+          "y": 196,
+          "w": 1,
+          "h": 568,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1954,
+          "y": 196,
+          "w": 1,
+          "h": 568,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {}
+        }
+      ]
+    },
+    {
+      "name": "dpf",
+      "kind": "gpu",
+      "title": "Partikul filtresi",
+      "entry": false,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "dpfMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 92,
+          "opts": {
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 4,
+            "chips": "Filtre iyi|ok; Deneysel|warn; Salt okunur|dim",
+            "sub": "Dizel motor beyninden · hicbir sey yazilmaz",
+            "title": "Partikul filtresi"
+          }
+        },
+        {
+          "name": "dpfSoot",
+          "rtype": "gpu",
+          "gpu": "teleBarTile",
+          "x": 40,
+          "y": 196,
+          "w": 956,
+          "h": 220,
+          "opts": {
+            "dec": 1,
+            "min": 0,
+            "peak": null,
+            "tickDiv": 1,
+            "tickDec": -1,
+            "big": 0,
+            "label": "Kurum · rejenerasyon ~24 g'da (tipik)",
+            "value": 18.4,
+            "unit": "g",
+            "max": 30,
+            "limit": 24,
+            "ticks": 6
+          }
+        },
+        {
+          "name": "dpfKv",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 40,
+          "y": 440,
+          "w": 956,
+          "h": 320,
+          "opts": {
+            "rowH": 64,
+            "rows": "Son rejenerasyondan beri | 168 km\nSonrakine yaklasik | 50 km\nO zamandan beri yakit | 9.4 l\nO zamandan beri motor calismasi | 1:41 sa\nSimdiye kadar rejenerasyon | 127"
+          }
+        },
+        {
+          "name": "dpfTemp",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 1068,
+          "y": 196,
+          "w": 903,
+          "h": 268,
+          "opts": {
+            "label": "Egzoz sicakligi",
+            "value": "296",
+            "unit": "°C",
+            "lo": 240,
+            "hi": 340,
+            "legend": "DPF oncesi, Katalizor oncesi",
+            "points": "281,284,290,288,293,297,301,298,294,296",
+            "points2": "292,296,301,300,306,309,313,310,305,308",
+            "foot": "katalizor oncesi 308 °C · son 5 dk · rejenerasyon ~600 °C'de calisir"
+          }
+        },
+        {
+          "name": "dpfDp",
+          "rtype": "gpu",
+          "gpu": "teleTrend",
+          "x": 1068,
+          "y": 496,
+          "w": 903,
+          "h": 268,
+          "opts": {
+            "label": "Diferansiyel basinc",
+            "value": "44",
+            "unit": "mbar",
+            "lo": 20,
+            "hi": 70,
+            "legend": "",
+            "points2": "",
+            "points": "31,38,47,52,44,40,46,49,43,44",
+            "foot": "filtre genelinde · son 5 dk · en dusuk 31 · en yuksek 52"
+          }
+        },
+        {
+          "name": "dpfHistTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2043,
+          "y": 205,
+          "w": 797,
+          "h": 31,
+          "opts": {
+            "text": "MOTOR BEYNI GECMISI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "dpfHist",
+          "rtype": "gpu",
+          "gpu": "teleTable",
+          "x": 2043,
+          "y": 236,
+          "w": 797,
+          "h": 310,
+          "opts": {
+            "columns": "#:0.35, Kilometre:1.3:right, Aralik:1:right",
+            "rowH": 52,
+            "rows": "1 | 48 042 km | 402 km\n2 | 47 640 km | 409 km\n3 | 47 231 km | 357 km\n4 | 46 874 km | 435 km\n5 | 46 439 km | --"
+          }
+        },
+        {
+          "name": "dpfMore",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 2043,
+          "y": 584,
+          "w": 797,
+          "h": 180,
+          "opts": {
+            "rowH": 60,
+            "rows": "Ortalama aralik | 412 km\nYag kulu | 41.7 g\nKurum, hesaplanan | 19.8 g"
+          }
+        },
+        {
+          "name": "dpfEmpty",
+          "rtype": "gpu",
+          "gpu": "teleEmpty",
+          "x": 40,
+          "y": 196,
+          "w": 2800,
+          "h": 568,
+          "opts": {
+            "icon": "info",
+            "head": "Motor beyninden partikul filtresi degeri gelmiyor",
+            "line": "Bu sayfa dizel motorlar icin: bu degerleri motor beyni (DDE) verir.",
+            "color": "",
+            "hidden": true
+          }
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1031,
+          "y": 196,
+          "w": 1,
+          "h": 568,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 2006,
+          "y": 196,
+          "w": 1,
+          "h": 568,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {}
+        }
+      ]
+    },
+    {
+      "name": "details",
+      "kind": "gpu",
+      "title": "Detaylar",
+      "entry": false,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "detailsMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 92,
+          "opts": {
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 5,
+            "chips": "Okunuyor|ok",
+            "sub": "Motor beyni degerleri gruplar halinde · 76 degerin 46'si okundu",
+            "title": "Detaylar"
+          }
+        },
+        {
+          "name": "grp0",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 201,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "MOTOR",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv0",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 40,
+          "y": 232,
+          "w": 646,
+          "h": 276,
+          "opts": {
+            "rows": "Motor devri | 1571 rpm\nMotor yuku | 26 %\nGaz pedali | 46 %\nKelebek | 21 %\nMotor torku | 191 Nm\nCalisma suresi | 1491 sn",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp1",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 521,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "YAG",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv1",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 40,
+          "y": 552,
+          "w": 646,
+          "h": 184,
+          "opts": {
+            "rows": "Yag basinci | 2.90 bar\nMinimum ustu yag | 0.49 l\nKalan yag omru | 71 %",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp2",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 758,
+          "y": 201,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "SICAKLIKLAR",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv2",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 758,
+          "y": 232,
+          "w": 646,
+          "h": 276,
+          "opts": {
+            "rows": "Sogutma suyu | 77 °C\nRadyator cikisi | 89 °C\nFiltre sonrasi yag | 96 °C\nKarterdeki yag | 76 °C\nEmme havasi | 37 °C\nDolum havasi | 41 °C",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp3",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 758,
+          "y": 521,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "YAKIT",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv3",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 758,
+          "y": 552,
+          "w": 646,
+          "h": 184,
+          "opts": {
+            "rows": "Ray basinci | 320 bar\nAlcak basinc yakit | 4.6 bar\nLambda banka 1 · 2 | 1.00 · 0.99",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp4",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1476,
+          "y": 201,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "ATESLEME VE VURUNTU",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv4",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 1476,
+          "y": 232,
+          "w": 646,
+          "h": 322,
+          "opts": {
+            "rows": "Avans | 10.8 °\nVuruntu gecikmesi sil 1 · 2 | 0.0 · 0.0 °\nVuruntu gecikmesi sil 3 · 4 | 0.0 · 1.5 ° | warn\nVuruntu gecikmesi sil 5 · 6 | 0.0 · 0.0 °",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp5",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1476,
+          "y": 567,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "VANOS",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv5",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 1476,
+          "y": 598,
+          "w": 646,
+          "h": 138,
+          "opts": {
+            "rows": "Emme gercek · hedef | 84 · 85 °\nEgzoz gercek · hedef | -92 · -92 °",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp6",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2194,
+          "y": 201,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "ENJEKTOR DUZELTMELERI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv6",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 2194,
+          "y": 232,
+          "w": 646,
+          "h": 276,
+          "opts": {
+            "rows": "Sil 1 · 2 | +1.2 · -0.4 %\nSil 3 · 4 | +0.3 · +2.8 % | warn\nSil 5 · 6 | -0.9 · +0.1 %",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "grp7",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2194,
+          "y": 521,
+          "w": 646,
+          "h": 31,
+          "opts": {
+            "text": "VERI BAGLANTILARI",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "grpKv7",
+          "rtype": "gpu",
+          "gpu": "teleKv",
+          "x": 2194,
+          "y": 552,
+          "w": 646,
+          "h": 184,
+          "opts": {
+            "rows": "Kaynaklar | tumu iyi | ok\nOBD PID (DME) | 04 05 0B 0C 0D 0F 11 …\nOBD PID (EGS) | A4\nGuncelleme | rpm 19.8/s · hiz 9.8/s",
+            "rowH": 46
+          }
+        },
+        {
+          "name": "detailsProgress",
+          "rtype": "gpu",
+          "gpu": "teleProgress",
+          "x": 40,
+          "y": 710,
+          "w": 2082,
+          "h": 54,
+          "opts": {
+            "label": "Motor beyni okunuyor",
+            "right": "12 / 89",
+            "value": 0.13,
+            "color": "",
+            "hidden": true
+          }
+        },
+        {
+          "name": "detailsEmpty",
+          "rtype": "gpu",
+          "gpu": "teleEmpty",
+          "x": 40,
+          "y": 196,
+          "w": 2082,
+          "h": 568,
+          "opts": {
+            "icon": "info",
+            "head": "Motor beyni yanit vermiyor",
+            "line": "Kontak acikken yanit verir; degerleri o zaman burada gorunur.",
+            "color": "",
+            "hidden": true
+          }
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 722,
+          "y": 196,
+          "w": 1,
+          "h": 500,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1440,
+          "y": 196,
+          "w": 1,
+          "h": 500,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep3",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 2158,
+          "y": 196,
+          "w": 1,
+          "h": 500,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {}
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "kind": "gpu",
+      "title": "Ayarlar",
+      "entry": false,
+      "bg": "#000000",
+      "bgArea": "app",
+      "components": [
+        {
+          "name": "bg",
+          "rtype": "gpu",
+          "gpu": "mtrackBg",
+          "x": 0,
+          "y": 0,
+          "w": 2880,
+          "h": 960,
+          "opts": {
+            "veil": 0.5
+          }
+        },
+        {
+          "name": "settingsMenu",
+          "rtype": "gpu",
+          "gpu": "mtrackShell",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 92,
+          "opts": {
+            "tabs": "Motor, Yakit ve hava, Yolculuklar, Sanziman, DPF, Detaylar, Ayarlar",
+            "sel": 6,
+            "chips": "",
+            "sub": "Bar uclari ve yolculuk maliyeti · unitede saklanir, hemen kullanilir",
+            "title": "Ayarlar"
+          }
+        },
+        {
+          "name": "perfTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 40,
+          "y": 205,
+          "w": 880,
+          "h": 31,
+          "opts": {
+            "text": "BAR UCLARI · PERFORMANS",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "rpmMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 40,
+          "y": 240,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Motor devri",
+            "sub": "Kirmizi bolge 7200 rpm'den",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 5000,
+            "max": 10000,
+            "value": 8000,
+            "unit": "rpm",
+            "decimals": 0
+          }
+        },
+        {
+          "name": "boostMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 40,
+          "y": 344,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Turbo basinci",
+            "sub": "Kirmizi bolge 2.25 bar'dan",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 0.5,
+            "max": 4,
+            "value": 2.5,
+            "unit": "bar",
+            "decimals": 2
+          }
+        },
+        {
+          "name": "powerMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 40,
+          "y": 448,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Guc",
+            "sub": "Kirmizi bolge 450 hp'den",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 200,
+            "max": 1000,
+            "value": 500,
+            "unit": "hp",
+            "decimals": 0
+          }
+        },
+        {
+          "name": "torqueMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 40,
+          "y": 552,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Tork",
+            "sub": "Kirmizi bolge 630 Nm'den",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 300,
+            "max": 1200,
+            "value": 700,
+            "unit": "Nm",
+            "decimals": 0
+          }
+        },
+        {
+          "name": "tempTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1000,
+          "y": 205,
+          "w": 880,
+          "h": 31,
+          "opts": {
+            "text": "BAR UCLARI · SICAKLIKLAR",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "oilMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 1000,
+          "y": 240,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Yag",
+            "sub": "Olcek 40 °C'den",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 100,
+            "max": 180,
+            "value": 150,
+            "unit": "°C",
+            "decimals": 0
+          }
+        },
+        {
+          "name": "coolantMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 1000,
+          "y": 344,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Sogutma suyu",
+            "sub": "Olcek 40 °C'den",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 100,
+            "max": 160,
+            "value": 130,
+            "unit": "°C",
+            "decimals": 0
+          }
+        },
+        {
+          "name": "intakeMax",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 1000,
+          "y": 448,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Emme havasi",
+            "sub": "Olcek -20 °C'den",
+            "icon": "",
+            "control": "slider",
+            "text": "",
+            "min": 40,
+            "max": 120,
+            "value": 80,
+            "unit": "°C",
+            "decimals": 0
+          }
+        },
+        {
+          "name": "settingsNote",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1000,
+          "y": 583,
+          "w": 880,
+          "h": 31,
+          "opts": {
+            "text": "Kirmizi bolge her barin son %10'u.",
+            "size": 24,
+            "font": "label",
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "tripsTitle",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 1960,
+          "y": 205,
+          "w": 880,
+          "h": 31,
+          "opts": {
+            "text": "YOLCULUKLAR",
+            "size": 24,
+            "font": "bold",
+            "spacing": 2,
+            "align": "left",
+            "color": "#81c4ff",
+            "wrap": false
+          }
+        },
+        {
+          "name": "priceRow",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 1960,
+          "y": 240,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Yakit fiyati",
+            "sub": "Litre basina · Yolculuklar'daki maliyet icin",
+            "icon": "",
+            "control": "none",
+            "text": ""
+          }
+        },
+        {
+          "name": "priceDown",
+          "rtype": "gpu",
+          "gpu": "teleButton",
+          "x": 2470,
+          "y": 244,
+          "w": 96,
+          "h": 96,
+          "opts": {
+            "text": "-",
+            "icon": "",
+            "kind": "outline",
+            "disabled": false
+          },
+          "onTap": "event:priceDown"
+        },
+        {
+          "name": "priceText",
+          "rtype": "gpu",
+          "gpu": "text",
+          "x": 2566,
+          "y": 281,
+          "w": 170,
+          "h": 34,
+          "opts": {
+            "text": "1.80",
+            "size": 27,
+            "font": "num",
+            "align": "center",
+            "color": "#f2f3f5",
+            "wrap": false
+          }
+        },
+        {
+          "name": "priceUp",
+          "rtype": "gpu",
+          "gpu": "teleButton",
+          "x": 2736,
+          "y": 244,
+          "w": 96,
+          "h": 96,
+          "opts": {
+            "text": "+",
+            "icon": "",
+            "kind": "outline",
+            "disabled": false
+          },
+          "onTap": "event:priceUp"
+        },
+        {
+          "name": "currencyRow",
+          "rtype": "gpu",
+          "gpu": "teleRow",
+          "x": 1960,
+          "y": 344,
+          "w": 880,
+          "h": 104,
+          "opts": {
+            "label": "Para birimi",
+            "sub": "Yakit fiyati ve maliyetler icin · sonraki icin dokun",
+            "icon": "",
+            "control": "chevron",
+            "text": "EUR",
+            "textColor": "text"
+          },
+          "onTap": "event:currency"
+        },
+        {
+          "name": "resetBtn",
+          "rtype": "gpu",
+          "gpu": "teleButton",
+          "x": 2380,
+          "y": 668,
+          "w": 460,
+          "h": 96,
+          "opts": {
+            "text": "Varsayilanlara don",
+            "icon": "refresh",
+            "kind": "outline",
+            "disabled": false
+          },
+          "onTap": "event:reset"
+        },
+        {
+          "name": "vsep1",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 960,
+          "y": 196,
+          "w": 1,
+          "h": 520,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "vsep2",
+          "rtype": "gpu",
+          "gpu": "mtrackPanel",
+          "x": 1920,
+          "y": 196,
+          "w": 1,
+          "h": 520,
+          "opts": {
+            "vert": true,
+            "edge": 0.45
+          }
+        },
+        {
+          "name": "sySign",
+          "rtype": "gpu",
+          "gpu": "mtrackSign",
+          "x": 0,
+          "y": 76,
+          "w": 2880,
+          "h": 764,
+          "opts": {}
+        }
+      ]
+    }
+  ]
+}

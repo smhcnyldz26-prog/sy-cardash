@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "application": {
+    "uuid": "62339120-7f9a-4ebe-94fd-e3fc00766cae",
+    "type": "OnlineApp",
+    "name": "sy_cardash",
+    "vendor": "custom",
+    "version": "1.0.0",
+    "defaultLanguage": "en_GB",
+    "uiDescriptions": [
+      {
+        "applicationFilePath": "./uiDescriptions/ID8/application.xml",
+        "uiDescriptionFilePath": "./uiDescriptions/ID8/uiDescription.json",
+        "hmi": [
+          "ID8"
+        ]
+      }
+    ],
+    "stringBundleUuid": "c7dde996-9840-42de-a6ab-dbde1ecf3d99",
+    "resourceBundleUuid": "57514d03-c7ae-4bbc-8922-a9788eab6f64",
+    "variantGroups": [
+      {
+        "stringsPath": "./variantGroups/Common/texts",
+        "hmi": [
+          "ID8"
+        ],
+        "brands": [
+          "BMW"
+        ],
+        "resourcesPath": "./resources"
+      }
+    ],
+    "entryPoints": [
+      {
+        "uuid": "495f06ba-e4bc-408a-934d-c8e7fa405561",
+        "textId": "SID_7",
+        "insertionStateId": 3000,
+        "insertionFocusId": 0,
+        "appearance": "DEFAULT",
+        "insertionMode": 0,
+        "insertionOrder": 0,
+        "insertionPriority": 0,
+        "insertionGroup": 0,
+        "isGroupHeader": false,
+        "availability": "ENABLED",
+        "icon": "sy_cardash_icon.png"
+      }
+    ],
+    "appletId": 20218
+  }
+}
