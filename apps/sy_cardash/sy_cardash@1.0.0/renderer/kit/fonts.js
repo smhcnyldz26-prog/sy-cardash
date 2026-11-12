@@ -26,6 +26,10 @@ function family(name) {
 
 /** Smallest baked size >= requested (downscaling looks better), else largest. */
 function get(name, size) {
+    // Buyuk rakamlar ayri ailede: 150/190 px atlas tam karakter setiyle 1024 px yuksekligi asiyor
+    // (cihaz 2048 genisligindeki atlasi hic yuklemiyordu). mont kucuk boylarda tam karakterliyor,
+    // mbig yalnizca rakam/noktalama ve 120-190 px.
+    if (name === 'mont' && size >= 110) name = 'mbig';
     const fam = family(name) || family('label');
     if (!fam) return null;
     let best = null;

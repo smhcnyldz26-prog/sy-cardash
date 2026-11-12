@@ -1,6 +1,6 @@
 {
   "name": "sy_cardash",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Canli motor degerleri (SOME/IP getter'lari + TASU uzerinden OBD); GPU renderer ekranlari",
   "private": false,
   "main": "javascript/runner.js",
