@@ -1,6 +1,4 @@
-SY Car Data (sy_cardash) is a re-skin of Car Data (iteriodev_cardash) by IterioDev: the renderer (screens.json,
-tele-widgets.js, the M Track elements, the backdrop and the Turkish translation layer) is changed, src/ is the
-original app. It contains code ported from cauliflowermossgrape/idrive7-apps
+Car Data (iteriodev_cardash) contains code ported from cauliflowermossgrape/idrive7-apps
 (https://github.com/cauliflowermossgrape/idrive7-apps @ c67ea17), MIT License, Copyright (c) 2026 cauliflowermossgrape.
 The license text is LICENSE in this folder. The ported files, in the package's src/:
 
@@ -11,4 +9,4 @@ The license text is LICENSE in this folder. The ported files, in the package's s
   main.js                       the engine types of kit/runtime/engine.js (ENGINE_TYPES)
 
 Each names its source at its top. The rest of Car Data is under the license of the IterioDev/car-apps repository
-(LICENSE.md there): PolyForm Strict 1.0.0 - personal use only, no redistribution.
+(LICENSE.md there).

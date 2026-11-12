@@ -494,9 +494,9 @@ function mtMark(cv, x, y, h) {                                 // the three M ba
     const w = Math.max(5, Math.round(h * 0.28)), g = Math.max(3, Math.round(h * 0.18));
     [MT.light, MT.deep, MT.red].forEach((c, i) => cv.fillRect(x + i * (w + g), y, w, h, c));
 }
-// The backdrop: a dim geometric pattern, prepared offline as three tiles (1024 + 1024 + 832) because
-// the renderer's png decoder stops at 1024 a side. Pixels are blitted 1:1 - the file is not scaled,
-// brightened or quantised at draw time.
+// The backdrop: one small texture stretched to the app area. It used to be three 1024x960 tiles
+// (full resolution) but that is ~12 MB of texture on a head unit with a 100 MB ceiling - the frame
+// was drawn once and the renderer then died. One 1024x342 tile is 1.4 MB and scales smoothly.
 const BGPIC = [];
 try {
     const list = require('./kit/assets/bg.js');
@@ -508,26 +508,28 @@ try {
     }
 } catch (e) { BGPIC.length = 0; }
 function mtBgDraw(cv, b, o) {
-    let x = 0;
-    for (const [w, pic] of BGPIC) {
-        cv.image(pic, x, 0, w, b.h, 0);
-        x += w;
-    }
-    // Perde: icerik alani sakinlesir, fotograf ust bantta ve alt seritte nefes alir.
-    // Kutu degil, sadece isik: yumusak giris/cikis rampalari + kenar vinyeti.
-    const veil = o && isNum(o.veil) ? o.veil : 0.5;
-    const top = 140, bot = b.h - 20, ramp = 40, step = ramp / 10;
-    for (let i = 0; i < 10; i++) {
-        cv.fillRect(0, top - ramp + step * i, b.w, step + 1, withAlpha('#000000', veil * (i + 1) / 10));
-    }
-    cv.fillRect(0, top, b.w, bot - top, withAlpha('#000000', veil));
-    for (let i = 0; i < 10; i++) {
-        cv.fillRect(0, bot + step * i, b.w, step + 1, withAlpha('#000000', veil * (10 - i) / 10));
-    }
-    for (let i = 0; i < 8; i++) {
-        cv.fillRect(i * 16, 0, 17, b.h, withAlpha('#000000', 0.30 * (1 - i / 8)));
-        cv.fillRect(b.w - (i + 1) * 16, 0, 17, b.h, withAlpha('#000000', 0.30 * (1 - i / 8)));
-    }
+    try {
+        let x = 0;
+        for (const [w, pic] of BGPIC) {
+            cv.image(pic, x, 0, BGPIC.length === 1 ? b.w : w, b.h, 0);
+            x += w;
+        }
+        if (!BGPIC.length) return;
+        // Perde: icerik alani sakinlesir, fotograf ust bantta ve alt seritte nefes alir.
+        const veil = o && isNum(o.veil) ? o.veil : 0.5;
+        const top = 140, bot = b.h - 20, ramp = 40, step = ramp / 10;
+        for (let i = 0; i < 10; i++) {
+            cv.fillRect(0, top - ramp + step * i, b.w, step + 1, withAlpha('#000000', veil * (i + 1) / 10));
+        }
+        cv.fillRect(0, top, b.w, bot - top, withAlpha('#000000', veil));
+        for (let i = 0; i < 10; i++) {
+            cv.fillRect(0, bot + step * i, b.w, step + 1, withAlpha('#000000', veil * (10 - i) / 10));
+        }
+        for (let i = 0; i < 8; i++) {
+            cv.fillRect(i * 16, 0, 17, b.h, withAlpha('#000000', 0.30 * (1 - i / 8)));
+            cv.fillRect(b.w - (i + 1) * 16, 0, 17, b.h, withAlpha('#000000', 0.30 * (1 - i / 8)));
+        }
+    } catch (e) { /* arka plan cizilemezse sayfa siyah kalir, uygulama dusmez */ }
 }
 // The signature: the M wordmark that sits under SY. Its own picture so the
 // header never depends on a font glyph the atlas may lack.
@@ -964,8 +966,11 @@ function trField(s) {
 }
 
 const TR_KEYS = ['label', 'sub', 'text', 'head', 'line', 'foot', 'legend', 'unit', 'tabs', 'chips', 'items', 'columns', 'rows', 'title'];
+const TR_CACHE = new WeakMap();          // ayni opts nesnesi her karede yeniden cevrilmesin
 function trOpts(o) {
     if (!o || typeof o !== 'object') return o;
+    const hit = TR_CACHE.get(o);
+    if (hit) return hit;
     let out = null;
     for (const k of TR_KEYS) {
         const v = o[k];
@@ -980,7 +985,9 @@ function trOpts(o) {
         }
         if (n !== v) { if (!out) out = Object.assign({}, o); out[k] = n; }
     }
-    return out || o;
+    const res = out || o;
+    TR_CACHE.set(o, res);
+    return res;
 }
 
 // screens.json / app metinlerinin tam eslesme sozlugu (ASCII katlanmis)
