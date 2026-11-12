@@ -572,8 +572,11 @@ function mtTabBoxes(cv, b, o) {                                // the page rail:
     const widths = tabs.map((t) => capsW(cv, t, 22));
     let x = b.x + MT.pad;
     return tabs.map((t, i) => {
-        const box = { x: x - 12, y: base - 26, w: widths[i] + 24, h: 38, label: t, tx: x, tw: widths[i], i };
-        x += widths[i] + gap;
+        // dokunma alani yazidan buyuk: tum header bandi yuksekligi + en az 96 px genislik
+        const tw = widths[i], w = Math.max(96, tw + 36);
+        const bx = x + tw / 2 - w / 2;
+        const box = { x: bx, y: b.y + 2, w, h: b.h - 4, label: t, tx: x, tw, i };
+        x += tw + gap;
         return box;
     });
 }
@@ -677,9 +680,9 @@ DRAW.mtrackMeter = (cv, t, b, o) => mtMeterDraw(cv, b, o);
 DRAW.mtrackStat = (cv, t, b, o) => mtStatDraw(cv, b, o);
 
 TRY.mtrackShell = (cv, b, o, p) => {
-    if (p.move) return false;
     const i = mtTabBoxes(cv, b, o).findIndex((t) => inside(t, p));
     if (i < 0) return false;
+    if (p.move) return true;                    // parmak kaydirsa da dokunus sekme icinde kalsin
     o.sel = i;
 };
 // ============================================================================================
@@ -928,7 +931,7 @@ const MAP = {
 
 // kaliplar: degeri koruyarak ceviren kurallar
 const RULES = [
-    [/^(.*) · peak ([\d., ]+)$/, (m) => tr(m[1]) + ' · tepe ' + m[2]],
+    [/^(.*) · peak ([\d., ]+)$/, (m) => tr(m[1]) + ' · PEAK ' + m[2]],
     [/^last 5 min · min ([\d., -]+) · max ([\d., -]+)$/, (m) => 'son 5 dk · en dusuk ' + m[1] + ' · en yuksek ' + m[2]],
     [/^heat soak · min ([\d., -]+) · max ([\d., -]+)$/, (m) => 'isi emilimi · en dusuk ' + m[1] + ' · en yuksek ' + m[2]],
     [/^before TDC · min ([\d., -]+) · max ([\d., -]+)$/, (m) => 'UON oncesi · en dusuk ' + m[1] + ' · en yuksek ' + m[2]],
