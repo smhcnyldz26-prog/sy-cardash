@@ -1,6 +1,6 @@
 {
   "id": "sy_cardash",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "title": "SY Car Data",
   "description": "SY Car Data - iDrive 8 ekraninizda canli motor verisi: motor devri, turbo basinci, guc ve tork (tepe degerleriyle), yag, sogutma suyu ve emme sicakliklari, aku voltaji; son 5 dakikasiyla yakit ve hava degerleri; maliyetli yolculuk bilgisayari; sanziman verisi (ZF 8HP, salt okunur, deneysel); motor beyninin degerleri gruplar halinde; dizel araclarda DPF sayfasi (kurum yuku, rejenerasyonlar, egzoz sicakliklari, salt okunur, deneysel). Bar uclari, yakit fiyati ve para birimi Ayarlar sayfasindan ayarlanir.",
   "mguHmi": [

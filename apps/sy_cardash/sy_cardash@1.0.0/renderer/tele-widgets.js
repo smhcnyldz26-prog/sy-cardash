@@ -602,7 +602,8 @@ function mtRevDraw(cv, b, o) {                                 // the rev band: 
     // o.flash = its own threshold if the app ever sends one; else the red-zone start.
     const flashAt = isNum(o.flash) ? o.flash : lim;
     const over = v != null && flashAt != null && v >= flashAt;
-    const blinkOn = !over || Math.floor(Date.now() / 500) % 2 === 0;
+    const BLINK = isNum(o.blinkMs) ? o.blinkMs : 150;      // shift light gibi hizli: 100 ms'de bir faz
+    const blinkOn = !over || Math.floor(Date.now() / BLINK) % 2 === 0;
     cv.text(txt, x + nw, b.y + 122, 96, v == null ? MT.deep : over ? (blinkOn ? MT.red : C.text) : C.text, { font: 'mont', align: 'right' });
     cv.text(o.unit || 'rpm', x + nw + 14, b.y + 122, 24, over ? MT.red : MT.light);
     // the band: 40 segments, M blue to the value, red past the limit

@@ -252,7 +252,7 @@
             F('back', 'Room for Back', 'bool', false), F('credit', 'Credit line (- = none)', 'text', ''), F('hu', 'Head unit', 'select', 'id8', ['id8', 'id7'])] },
         mtrackRev: { label: 'M Rev band', icon: '▤', tele: true, box: [2784, 150], fields: [F('label', 'Label', 'text', 'Engine speed'),
             F('value', 'Value', 'num', 5200), F('unit', 'Unit', 'text', 'rpm'), F('dec', 'Decimals', 'int', 0), F('min', 'Lowest', 'num', 0),
-            F('max', 'Highest', 'num', 8000), F('limit', 'Red zone from', 'num', 7200), F('peak', 'Peak mark (empty: none)', 'num', null),
+            F('max', 'Highest', 'num', 8000), F('limit', 'Red zone from', 'num', 7200), F('peak', 'Peak mark (empty: none)', 'num', null), F('blinkMs', 'Blink ms', 'int', 100),
             F('ticks', 'Ticks', 'int', 8), F('tickDiv', 'Divide tick numbers by', 'num', 1000), F('tickDec', 'Tick decimals (-1: divide instead)', 'int', -1)] },
         mtrackHero: { label: 'M Hero number', icon: '8', tele: true, box: [520, 210], fields: [F('label', 'Label', 'text', 'Speed'),
             F('value', 'Value (text)', 'text', '87'), F('unit', 'Unit', 'text', 'km/h'), F('size', 'Size', 'int', 190), F('color', 'Colour', 'color', '')] },

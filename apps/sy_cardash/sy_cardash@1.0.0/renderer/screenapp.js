@@ -226,7 +226,7 @@ class ScreenApp extends EventEmitter {
     // animated: a frame per tick; static: one a second (the renderer hides an app silent for 3 s - and drops its claims)
     _run() {
         if (this.animate) { const t0 = Date.now(); this.anim = () => this._draw((Date.now() - t0) / 1000); this.gpu.on('tick', this.anim); }
-        else this.keep = setInterval(() => this._draw(), 1000);
+        else this.keep = setInterval(() => this._draw(), 100);   // 10 Hz: redline flash'i veri gelmese de donsun
     }
     _stop() {
         if (this.anim) this.gpu.removeListener('tick', this.anim);
