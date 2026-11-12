@@ -611,8 +611,11 @@ function mtRevDraw(cv, b, o) {                                 // the rev band: 
     const sw = (bandW - (n - 1) * gap) / n, lit = v == null ? 0 : Math.round(f(v) * n), peakN = isNum(o.peak) ? Math.round(f(o.peak) * n) : -1;
     for (let i = 0; i < n; i++) {
         const sx = bandX + i * (sw + gap), seg = min + (max - min) * (i + 0.5) / n, red = seg > lim;
-        const lit1 = i < lit || (over && blinkOn && red);
-        cv.fillRect(sx, by, sw, bh, lit1 ? (red ? MT.red : C.text) : red ? withAlpha(MT.red, 0.28) : C.track);
+        // limit asilinca barin TAMAMI kirmizi/beyaz yanip soner (rakamla ayni fazda)
+        const col1 = over
+            ? (blinkOn ? MT.red : C.text)
+            : i < lit ? (red ? MT.red : C.text) : red ? withAlpha(MT.red, 0.28) : C.track;
+        cv.fillRect(sx, by, sw, bh, col1);
     }
     if (peakN >= 0) cv.fillRect(bandX + peakN * (sw + gap) - 1, by - 10, 3, bh + 20, MT.deep);
     // ticks under the band
@@ -625,8 +628,8 @@ function mtRevDraw(cv, b, o) {                                 // the rev band: 
     // shift lights, right of the band
     const sx0 = bandX + bandW + 60, on = v == null ? 0 : Math.min(lights, Math.round(f(v) / Math.max(0.01, f(lim)) * lights));
     for (let i = 0; i < lights; i++) {
-        const on1 = i < on, hot = i >= lights - 3;
-        const col1 = on1 ? (hot ? (over && !blinkOn ? withAlpha(MT.red, 0.3) : MT.red) : C.text) : C.track;
+        const on1 = over || i < on, hot = i >= lights - 3;
+        const col1 = on1 ? (over ? (blinkOn ? MT.red : C.text) : hot ? MT.red : C.text) : C.track;
         cv.fillRect(sx0 + i * (lw + lgap), by + 4, lw, bh - 8, col1);
     }
 }
