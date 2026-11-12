@@ -509,15 +509,16 @@ try {
 } catch (e) { BGPIC.length = 0; }
 function mtBgDraw(cv, b, o) {
     try {
+        // yalnizca uygulama alani: 0..960 cizmek HMI yuzeyinin disina tasiyordu
+        const top0 = b.y, hgt = b.h;
         let x = 0;
         for (const [w, pic] of BGPIC) {
-            cv.image(pic, x, 0, BGPIC.length === 1 ? b.w : w, b.h, 0);
+            cv.image(pic, x, top0, BGPIC.length === 1 ? b.w : w, hgt, 0);
             x += w;
         }
         if (!BGPIC.length) return;
-        // Perde: icerik alani sakinlesir, fotograf ust bantta ve alt seritte nefes alir.
         const veil = o && isNum(o.veil) ? o.veil : 0.5;
-        const top = 140, bot = b.h - 20, ramp = 40, step = ramp / 10;
+        const top = top0 + 64, bot = top0 + hgt - 20, ramp = 40, step = ramp / 10;
         for (let i = 0; i < 10; i++) {
             cv.fillRect(0, top - ramp + step * i, b.w, step + 1, withAlpha('#000000', veil * (i + 1) / 10));
         }
@@ -526,8 +527,8 @@ function mtBgDraw(cv, b, o) {
             cv.fillRect(0, bot + step * i, b.w, step + 1, withAlpha('#000000', veil * (10 - i) / 10));
         }
         for (let i = 0; i < 8; i++) {
-            cv.fillRect(i * 16, 0, 17, b.h, withAlpha('#000000', 0.30 * (1 - i / 8)));
-            cv.fillRect(b.w - (i + 1) * 16, 0, 17, b.h, withAlpha('#000000', 0.30 * (1 - i / 8)));
+            cv.fillRect(i * 16, top0, 17, hgt, withAlpha('#000000', 0.30 * (1 - i / 8)));
+            cv.fillRect(b.w - (i + 1) * 16, top0, 17, hgt, withAlpha('#000000', 0.30 * (1 - i / 8)));
         }
     } catch (e) { /* arka plan cizilemezse sayfa siyah kalir, uygulama dusmez */ }
 }
