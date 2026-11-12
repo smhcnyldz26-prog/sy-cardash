@@ -464,7 +464,7 @@ function syncTabs() {          // every page's frame: the tabs shown, its own on
 // The red zone is the last 10 % of a bar (user decision); the torque bar ends where the slider says, whatever
 // rated torque the car reports. key: [default, slider lowest, highest, step]; settings row = <key>Max.
 const SETTINGS_FILE = path.join(__dirname, '..', '..', 'data', 'settings.json');   // the app's data folder (the Store's)
-const RANGES = { rpm: [8000, 5000, 10000, 500], boost: [2.5, 0.5, 4, 0.25], power: [500, 200, 1000, 50], torque: [700, 300, 1200, 50],
+const RANGES = { rpm: [8000, 2000, 10000, 500], boost: [2.5, 0.5, 4, 0.25], power: [500, 200, 1000, 50], torque: [700, 300, 1200, 50],
     oil: [150, 100, 180, 5], coolant: [130, 100, 160, 5], intake: [80, 40, 120, 5] };
 const UNITS = { rpm: 'rpm', boost: 'bar', power: 'hp', torque: 'Nm' };     // the bars with a red zone
 const snap = (k, v) => { const [def, lo, hi, st] = RANGES[k]; return isFinite(v) ? +Math.min(hi, Math.max(lo, Math.round(v / st) * st)).toFixed(2) : def; };

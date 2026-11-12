@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "id": "sy_cardash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "tree": "sy_cardash@1.0.0",
   "modules": [
     "src/main.js",
